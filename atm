@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int islem,bakiye=1000,tutar;
+    printf("islemler\n1:Para Cekme\n2:Para Yatirma\n3:Havale\n4:Bakiye goruntuleme\n5:Kart iade\n\n\n");
+    printf("islemi seciniz");
+    scanf("%d",&islem);
+
+    switch(islem){
+        case 1:
+            printf("Bakiyeniz:%d\n",bakiye);
+            printf("Cekilecek tutar:");
+            scanf("%d",&tutar);
+            if(tutar>bakiye){
+                printf("Bakiye yetersiz\n");
+            }
+            bakiye-=tutar;
+            printf("Para cekilmistir\n");
+            printf("Bakiyeniz %d",bakiye);
+            break;
+        case 2:
+            printf("Bakiyeniz:%d\n",bakiye);
+            printf("Yatirilacak tutar:");
+            scanf("%d",&tutar);
+            bakiye+=tutar;
+            printf("Bakiyeniz %d",bakiye);
+            break;
+        case 3:
+             printf("Bakiyeniz:%d\n",bakiye);
+            printf("Havale yapilacak tutar:");
+            scanf("%d",&tutar);
+            if(tutar>bakiye){
+                printf("Bakiye yetersiz\n");
+            }
+            bakiye-=tutar;
+            printf("Bakiyeniz %d",bakiye);
+            break;
+        case 4:
+             printf("Bakiyeniz:%d\n",bakiye);
+            break;
+        case 5:
+            printf("Kart iade edildi\n iyi gunler dileriz");
+            break;
+        default:
+            printf("Bilinmeyen iþlem");
+
+
+
+    }
+    return 0;
+}
